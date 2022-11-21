@@ -1,11 +1,14 @@
 package com.geekbang.coupon.template.api.enums;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import java.util.stream.Stream;
 
 @Getter
-@AllArgsConstructor
+@NoArgsConstructor
 public enum CouponType {
 
     UNKNOWN("unknown", "0"),
@@ -20,8 +23,16 @@ public enum CouponType {
     // 存在数据库里的最终code
     private String code;
 
+    CouponType(String description, String code) {
+        this.code = code;
+        this.description = description;
+    }
+    public String getCode() {
+        return code;
+    }
+
     public static CouponType convert(String code) {
-        return Stream.of(values())
+        return Stream.of(CouponType.values())
                 .filter(couponType -> couponType.code.equalsIgnoreCase(code))
                 .findFirst()
                 .orElse(UNKNOWN);
