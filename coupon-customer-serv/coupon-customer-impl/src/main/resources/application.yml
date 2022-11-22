@@ -72,4 +72,22 @@ spring:
 logging:
   level:
     com.broadview.coupon: debug
+    com.geekbang.coupon.customer.feign.TemplateService: debug
+    com.geekbang.coupon.customer.feign.CalculationService: debug
 
+
+feign:
+  client:
+    config:
+      # 全局超时配置
+      default:
+        # 网络连接阶段1秒超时
+        connectTimeout: 1000
+        # 服务请求响应阶段5秒超时
+        readTimeout: 5000
+      # 针对某个特定服务的超时配置
+      coupon-template-serv:
+        connectTimeout: 1000
+        readTimeout: 2000
+  circuitbreaker:
+    enabled: true
