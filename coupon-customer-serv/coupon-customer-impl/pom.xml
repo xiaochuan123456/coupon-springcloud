@@ -49,6 +49,18 @@
             </exclusions>
         </dependency>
 
+        <!-- Nacos Config -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- 读取bootstrap文件 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+
+
         <!-- 响应式编程的Webflux组件，提供了异步化的非阻塞功能 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -6,8 +6,6 @@ server:
 
 
 spring:
-  application:
-    name: coupon-customer-serv
   datasource:
     # mysql数据源
     username: root
