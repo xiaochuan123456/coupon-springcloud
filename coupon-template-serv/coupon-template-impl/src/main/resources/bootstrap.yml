@@ -1,7 +1,6 @@
 spring:
-  # 必须把name属性从application.yml迁移过来，否则无法动态刷新
   application:
-    name: coupon-customer-serv
+    name: coupon-template-serv
   cloud:
     nacos:
       config:
@@ -25,9 +24,6 @@ spring:
         # Nacos的扩展配置项，数字越大优先级越高
         enable-remote-sync-config: true
         extension-configs:
-          - dataId: coupon-config.yml
-            group: EXT_GROUP
-            refresh: true
           # 可以添加其他节点
           - dataId: rabbitmq-config.yml
             group: EXT_GROUP

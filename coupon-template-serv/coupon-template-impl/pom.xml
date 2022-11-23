@@ -23,6 +23,26 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
+        <!-- Sentinel -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba.csp</groupId>
+            <artifactId>sentinel-datasource-nacos</artifactId>
+        </dependency>
+
+        <!-- Nacos Config -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+        </dependency>
+        <!-- 读取bootstrap文件 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>coupon-template-api</artifactId>
@@ -69,7 +89,7 @@
          在Spring Boot阶段，由于我们是通过customer服务来跑单体应用，所以不用加
          在Spring Cloud阶段，以java -jar 运行项目必须在各个impl项目的pom中加上这个注解
     -->
-    <!--    <build>
+        <build>
             <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
@@ -83,6 +103,6 @@
                     </executions>
                 </plugin>
             </plugins>
-        </build>-->
+        </build>
 
 </project>

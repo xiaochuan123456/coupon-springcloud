@@ -66,6 +66,21 @@ spring:
         watch:
           enabled: true
         watch-delay: 30000
+    sentinel:
+      transport:
+        # sentinel api端口，默认8719
+        port: 8719
+        # dashboard地址
+        dashboard: 1.14.59.218:8080
+      datasource:
+        # 限流的规则key是flow
+        geekbang-flow:
+          nacos:
+            server-addr: 1.14.59.218:8848
+            namespace: dev
+            groupId: SENTINEL_GROUP
+            dataId: ${spring.application.name}-flow-rules
+            rule-type: flow
 
 logging:
   level:

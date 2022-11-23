@@ -5,9 +5,10 @@ server:
 #    context-path: /coupon-template
 
 spring:
-  application:
-    # 定义项目名称
-    name: coupon-calculation-serv
+  # 项目名称移到bootstrap.yml里了
+  #  application:
+  #    # 定义项目名称
+  #    name: coupon-calculation-serv
   cloud:
     nacos:
       discovery:
@@ -43,6 +44,21 @@ spring:
         watch:
           enabled: true
         watch-delay: 30000
+    sentinel:
+      transport:
+        # sentinel api端口，默认8719
+        port: 8719
+        # dashboard地址
+        dashboard: 1.14.59.218:8080
+      datasource:
+        # 限流的规则key是flow
+        geekbang-flow:
+          nacos:
+            server-addr: 1.14.59.218:8848
+            namespace: dev
+            groupId: SENTINEL_GROUP
+            dataId: ${spring.application.name}-flow-rules
+            rule-type: flow
 #  redis:
 #    database: 0
 #    host: localhost
@@ -61,3 +77,4 @@ management:
     web:
       exposure:
         include: "*"
+
