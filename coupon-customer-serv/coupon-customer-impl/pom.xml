@@ -96,6 +96,12 @@
             <version>7.0.1</version>
         </dependency>
 
+        <!-- Stream依赖，根据底层消息组件添加不同依赖项，这里使用的是RabbitMQ -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>coupon-customer-dao</artifactId>
