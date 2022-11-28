@@ -32,6 +32,11 @@ public class TemplateServiceFallbackFactory implements FallbackFactory<TemplateS
                 log.info("fallback factory method test" + cause);
                 return Maps.newHashMap();
             }
+
+            @Override
+            public void deleteTemplate(Long id) {
+                log.info("fallback factory method deleteTemplate" + cause);
+            }
         };
     }
 }

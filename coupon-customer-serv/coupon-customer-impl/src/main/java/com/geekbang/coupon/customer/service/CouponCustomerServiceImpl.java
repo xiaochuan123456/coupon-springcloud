@@ -271,4 +271,13 @@ public class CouponCustomerServiceImpl implements CouponCustomerService {
         couponDao.save(coupon);
     }
 
+    @Override
+    @Transactional
+    public void deleteCouponTemplate(Long templateId) {
+        templateService.deleteTemplate(templateId);
+        couponDao.deleteCouponInBatch(templateId, CouponStatus.INACTIVE);
+
+        throw new RuntimeException("AT分布式事务挂球了");
+    }
+
 }

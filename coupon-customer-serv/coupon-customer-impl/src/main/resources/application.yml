@@ -168,6 +168,11 @@ spring:
             consumer:
               auto-bind-dlq: true
     #      default-binder: rabbit
+    alibaba:
+      seata:
+        # seata默认txn分组名称，默认是application+一段seata特定字符串
+        # 我随便指定了一段分组
+        tx-service-group: seata-server-group
   sleuth:
     sampler:
       # 采样率的概率，100%采样
@@ -204,3 +209,18 @@ feign:
         readTimeout: 2000
   circuitbreaker:
     enabled: true
+
+seata:
+  application-id: coupon-customer-serv
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: localhost:8848
+      namespace: dev
+      group: myGroup
+      cluster: default
+  service:
+    vgroup-mapping:
+      seata-server-group: default
+

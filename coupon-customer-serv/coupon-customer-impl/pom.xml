@@ -102,6 +102,12 @@
             <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
         </dependency>
 
+        <!-- Seata -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>coupon-customer-dao</artifactId>
